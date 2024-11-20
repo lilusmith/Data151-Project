@@ -10,6 +10,7 @@ The data was cleaned and errors were removed using Python in a Google Colab envi
 Key findings indicate that the random forest regressor, which tends to resist overfitting, is the best model for this situation and data. 
 
 That predictive model outputs are as follows:
+
 ≈ 0.760 RMSE
 
 ≈ 0.914 R²
