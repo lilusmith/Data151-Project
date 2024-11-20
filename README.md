@@ -1,31 +1,14 @@
 # Data Analysis of Environmental Parameters of Soil
 
 
-## Data151-Project
+## Data151-Project Executive Summary
 
-This project analyzed data from the previous research projects: Environmental Restoration Target Estimation Around Engquist Nature Preserve and Assessing Carbon Sequestration Potential of Cropland Conversion in Porter County, IN. These research projects collected data at Shirley Heinze Land Trust (SHLT) by students of the Geography Department at Valparaiso University, including Jack Colwell (member of this group), Korbin Opfer (current student), Doc Janowiak (recent alumnus), and Justin Self (recent alumnus). This research is also supported by Dr. Jon-Paul McCool of the Geography Department. Also of note is that this research is still ongoing this semester. These past projects collected soil samples from different environment types at properties owned by SHLT and the samples were subsequently analyzed for various soil parameters. The different environment types included prairie, forested wetland, forest, floodplain forested wetland, and agriculture. Environmental parameters that were specifically analyzed were bulk density, gravel mass, rock volume, soil volume, wet weight, dry weight, mineral sample, organic matter percent, soil organic carbon (SOC) percent, calcium carbonate percent, estimated carbon in horizon per sq. m. of soil, and estimated carbon in 10 cm depth per sq m. of soil.  
-This project for DATA-151 explored healthy ranges for environmental variables for agriculture and then compared that to our existing dataset. It is important to develop a prediction for one or more variables within this dataset due to the cost and time to run all the tests. By modeling, we showed that one soil parameter can accurately predict another, or at least the magnitude and direction of another parameter. When these relationships are identified it can lead to accurate ways to take proxy measurements of soil parameters, rather than measure every single variable. 
-The average soil organic carbon (SOC) content in Indiana soils varies depending on factors such as land management, soil type, and climate. In general, the SOC levels across Indiana agricultural soils are often between 0.67% and 2% in the topsoil layer (for our project, this means the top 10cm of a soil profile). Though some areas with organic-rich soils may exceed this range the estimated SOC range.
-In order to develop our model, we ran different analyzation techniques, like a correlation matrix of the different parameters that were measured. Then these outcomes informed our predictive models, like a linear regression model and ANOVA. 
-The project is important because of SOC’s necessity to agriculture and climate change, specifically global warming. In terms of agriculture, SOC helps farmers make informed decisions about their crops and soil management. The more knowledgeable farmers are about their soil health, the faster they can identify nutrient deficiencies or imbalances, which can be addressed before planting crops. In terms of climate change, soils hold a substantial amount of organic carbon, which can be released into the atmosphere as carbon dioxide if soils degrade, or prevented if managed sustainably, thus playing a significant role in the global carbon cycle. 
+Soil organic carbon, or SOC, is an important metric to understand in an era of changing climate and ever advancing agricultural technologies. SOC is the organic matter in the soil that is composed of carbon and can be released into the environment from microbial respiration. 
+Data Analysis of Soil Parameters at a Local Land Preserve used a data analysis approach to analyze data previously collected in a study titled Environmental Restoration Target Estimation Around Engquist Nature Preserve by Jack Colwell and other students at Valparaiso University. This project's objective is to use our various soil parameters as predictors for SOC in the previously collected soil samples. We also compared our data to an optimal range for SOC levels. The SOC content in soil varies, influencing the ability to manage healthy agriculture and the global carbon cycle. Understanding these SOC levels helps farmers make more informed decisions on how to maintain healthy soil levels and mitigate climate change. 
+The data was cleaned and errors were removed using Python in a Google Colab environment. Then a correlation matrix was created to narrow down the highest correlated variables to use in our prediction for SOC content. From this matrix, it was found that two variables from this dataset are the best predictors to use: Carbonate-Free Mineral Sample (g) and Mineral Sample (g). By using these two variables, several regression models were run to output the RMSE (Root Mean Square Error) and R2 value of each regression model, as these results influence the decision on which model is best to apply. 
+Key findings indicate that the random forest regressor, which tends to resist overfitting, is the best model for this situation and data. That predictive model outputs are as follows:
+≈ 0.760 RMSE
+≈ 0.914 R²
 
-
-![image](https://github.com/user-attachments/assets/9c5d4fe0-fc6b-4efb-9dfa-a8b1409ed074)
-
-# Best model results:
-1.   Linear regression:
-  *   MSE 0.201726  
-  *   R squared 0.839502  
-2.   Lasso [alpha 0.01]:
-  *   MSE 0.30104
-  *   R squared 0.76048
-3.   Decision tree:
-  *   MSE 0.74536
-  *   R squared 0.40697
-
-
-
-
-
-
-
+This means that approximately 91.4% of the variance in the data can be explained by our model. That is to say, using these two variables, the SOC content can be reliably predicted, without a direct measure of SOC content itself. 
+These findings demonstrate that accurate SOC predictions can be achieved without measuring all variables, significantly reducing costs and time. By optimizing soil testing practices, farmers can improve crop management and enhance resilience to climate change. Moreover, this research aligns with broader goals in climate-smart agriculture by supporting efforts to increase soil carbon stocks and reduce greenhouse gas emissions.
